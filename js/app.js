@@ -31,10 +31,10 @@ var main = function () {
                         $(".description").html(weatherData["weather"][0]["description"]);
                         kelvin = weatherData["main"]["temp"];
                         if ($("#converter").prop("checked") === true) {
-                            $(".temperature").html(kelvin * (9 / 5) - 459.67);
+                            $(".temperature").html(parseInt(kelvin * (9 / 5) - 459.67) + " °F");
                         }
                         else {
-                            $(".temperature").html(kelvin - 273.15);
+                            $(".temperature").html(parseInt(kelvin - 273.15) + " °C");
                         }
                     }
                 }
@@ -64,11 +64,11 @@ var main = function () {
 $("#converter").on("click", function () {
     if ($("#converter").prop("checked") === true) {
         console.log("retarded");
-        $(".temperature").html(kelvin * 9 / 5 - 459.67);
+        $(".temperature").html(parseInt(kelvin * 9 / 5 - 459.67) + " °F");
     }
     else {
         console.log("!retarded");
-        $(".temperature").html(kelvin - 273.15);
+        $(".temperature").html(parseInt(kelvin - 273.15) + " °C");
     }
 });
 

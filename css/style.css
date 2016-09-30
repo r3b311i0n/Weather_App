@@ -41,7 +41,7 @@ footer {
 
 .slider:before {
     position: absolute;
-    content: "C°";
+    content: "°C";
     height: 26px;
     width: 26px;
     left: 4px;
@@ -59,7 +59,7 @@ input:checked + .slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
-    content: "F°";
+    content: "°F";
 }
 
 .slider.round {

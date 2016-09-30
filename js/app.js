@@ -3,6 +3,7 @@ const apiKey = "&APPID=6f500a9fa2f6cf6915ebda32f2c03f35";
 
 var latitude;
 var longitude;
+var kelvin;
 
 var main = function () {
 
@@ -22,6 +23,19 @@ var main = function () {
 
                     if (weatherData["cod"] == "404") {
                         $(".error").html("City Not Found.");
+                    }
+                    else {
+                        var weatherId = "owf-" + weatherData["weather"][0]["id"];
+                        console.log(weatherId);
+                        $(".owf").addClass(weatherId);
+                        $(".description").html(weatherData["weather"][0]["description"]);
+                        kelvin = weatherData["main"]["kelvin"];
+                        if ($("#converter").prop("checked") === true) {
+                            $(".temperature").html(kelvin * 9 / 5 - 459.67);
+                        }
+                        else {
+                            $(".temperature").html(kelvin - 273.15);
+                        }
                     }
                 }
             });
@@ -47,12 +61,14 @@ var main = function () {
     }
 };
 
-$("#temp").on("click", function () {
-    if ($("#temp").prop("checked") === true) {
+$("#converter").on("click", function () {
+    if ($("#converter").prop("checked") === true) {
         console.log("retarded");
+        $(".temperature").html(kelvin * 9 / 5 - 459.67);
     }
     else {
         console.log("!retarded");
+        $(".temperature").html(kelvin - 273.15);
     }
 });
 

@@ -29,9 +29,9 @@ var main = function () {
                         console.log(weatherId);
                         $(".owf").addClass(weatherId);
                         $(".description").html(weatherData["weather"][0]["description"]);
-                        kelvin = weatherData["main"]["kelvin"];
+                        kelvin = weatherData["main"]["temp"];
                         if ($("#converter").prop("checked") === true) {
-                            $(".temperature").html(kelvin * 9 / 5 - 459.67);
+                            $(".temperature").html(kelvin * (9 / 5) - 459.67);
                         }
                         else {
                             $(".temperature").html(kelvin - 273.15);

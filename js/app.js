@@ -63,11 +63,9 @@ var main = function () {
 
 $("#converter").on("click", function () {
     if ($("#converter").prop("checked") === true) {
-        console.log("retarded");
         $(".temperature").html(parseInt(kelvin * 9 / 5 - 459.67) + " °F");
     }
     else {
-        console.log("!retarded");
         $(".temperature").html(parseInt(kelvin - 273.15) + " °C");
     }
 });

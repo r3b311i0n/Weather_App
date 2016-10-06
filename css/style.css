@@ -1,3 +1,10 @@
+/*noinspection CssUnknownTarget*/
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+.container {
+    font-family: "Roboto", serif;
+}
+
 .controlsContainer {
     display: inline-grid;
 }
@@ -16,8 +23,8 @@ footer {
 .switch {
     position: absolute;
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    width: 68px;
+    height: 37px;
 }
 
 .switch input {
@@ -31,7 +38,7 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: green;
+    background-color: black;
     -webkit-transition: .4s;
     transition: .4s;
     -webkit-box-shadow: 3px 0 2px 0 rgba(0, 0, 0, 0.75);
@@ -41,10 +48,12 @@ footer {
 
 .slider:before {
     position: absolute;
+    font-size: 1.25em;
+    text-align: center;
     content: "°C";
-    height: 26px;
-    width: 26px;
-    left: 4px;
+    height: 29px;
+    width: 29px;
+    left: 5px;
     bottom: 4px;
     background-color: white;
     -webkit-transition: .4s;
@@ -52,18 +61,18 @@ footer {
 }
 
 input:checked + .slider {
-    background-color: red;
+    background-color: black;
 }
 
 input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    -webkit-transform: translateX(29px);
+    -ms-transform: translateX(29px);
+    transform: translateX(29px);
     content: "°F";
 }
 
 .slider.round {
-    border-radius: 34px;
+    border-radius: 37px;
 }
 
 .slider.round:before {
@@ -73,4 +82,10 @@ input:checked + .slider:before {
 .weather {
     width: 100%;
     text-align: center;
+}
+
+.switchContainer {
+    position: fixed;
+    left: 47.3%;
+    bottom: 21em;
 }
